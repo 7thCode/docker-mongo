@@ -8,8 +8,8 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - mongodb:/data/db
+      - mongo_data:/data/db
       - ./mongo_config:/data/configdb
     command: --quiet
 volumes:
-  mongodb:
+  mongo_data:
