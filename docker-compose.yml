@@ -1,13 +1,15 @@
 # Use root/example as user/password credentials
-version: '3.1'
+version: '3.9'
 services:
   mongo:
-    container_name: MONGO    
+    container_name: MONGO
     image: mongo
     restart: always
     ports:
       - 27017:27017
     volumes:
-      - ./mongodb:/data/db
+      - mongodb:/data/db
       - ./mongo_config:/data/configdb
-    command: --quiet  
+    command: --quiet
+volumes:
+  mongodb:
